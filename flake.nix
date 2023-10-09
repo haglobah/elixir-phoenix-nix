@@ -34,6 +34,23 @@
                     };
                   };
 
+                  enterShell = ''
+                    echo "
+                    
+                    Colab development environment. Running:
+                    "
+                    elixir --version
+                    
+                    echo "
+                    Run
+                    
+                    $ devenv up 
+                    to start postgres & phoenix.
+                    The configuration for everything lies in flake.nix.
+                    
+                    "
+                  '';
+
                   processes.phoenix.exec = "mix ecto.create && mix phx.server";
 
                   services.postgres.enable = true;
